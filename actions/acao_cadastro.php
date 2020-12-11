@@ -14,7 +14,7 @@ if(isset($_POST['btn-cadastro'])){
 			
 			$sql = "INSERT INTO estoque(nome_produto, quantidade, valor, codigo, id_produto) 
 					VALUES 
-				('$nome', $quanti, '$valor', '$codigo', $tipoEquip)";
+				('$nome', $quanti, $valor, '$codigo', $tipoEquip)";
 
 			$query = mysqli_query($conexao, $sql);
 

@@ -40,7 +40,7 @@ function search($page) {
 		 				 LEFT JOIN equipamentos AS equipamentos ON
 		 				 estoque.id_produto = 
 		 				 equipamentos.id_equipamento 
-		 				 WHERE estoque.nome_produto LIKE '%".$_GET['q']."%'"." OR valor LIKE '%".$num."%'"."OR codigo LIKE '%".$_GET['q']."%'"." ORDER BY estoque.id");
+		 				 WHERE estoque.nome_produto LIKE '%".$_GET['q']."%'"." OR valor LIKE '%".$num."%'"."OR codigo LIKE '%".$_GET['q']."%'"." ORDER BY estoque.id DESC");
 
 			while ($dados = mysqli_fetch_array($limite)) {  ?>
 				

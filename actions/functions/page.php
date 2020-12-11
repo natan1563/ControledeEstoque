@@ -68,21 +68,25 @@
 		 				 ORDER BY estoque.id DESC LIMIT 
 		 				 $init, $total_registros");
 		 
-			while ($dados = mysqli_fetch_array($limite)) {  ?>
+			while ($dados = mysqli_fetch_array($limite)) {  $id = $dados['id'];	?>
 				
 				<form class="mt-5 w-75 p-3 table-conf contain" action="actions/atualiza.php" method="POST">
 					
 					<!--Produto -->
-					<input type="text" name="_nome" class="row form-control mt-4 mx-auto" value="<?=$dados["nome_produto"];?>">
+					<label for="_nome" class="text-light mb-0">Produto: </label>
+					<input type="text" name="_nome" id="_nome" class="row form-control mt-1 mx-auto mb-3" value="<?=$dados["nome_produto"];?>">
 					
 					<!-- Tombo -->
-					<input type="number" name="valor" class="row form-control mt-5 mx-auto" placeholder="Valor: ex: 5,50" maxlength="12" value="<?=number_format($dados["valor"], 2, '.', ',');?>" step=0.01>
+					<label for="valor" class="text-light mb-0">Valor: </label>
+					<input type="number" name="valor" id="valor"class="row form-control mt-1 mb-3 mx-auto" placeholder="Valor: ex: 5,50" maxlength="12" value="<?=$dados["valor"];?>" step=0.01>
 					
 					<!-- Codigo -->
-					<input type="text" name="codigo" class="row form-control mt-5 mx-auto" placeholder="Codigo: BA123456789TR" value="<?=$dados["codigo"];?>"maxlength="12">
+					<label for="codigo" class="text-light mb-0">Codigo: </label>
+					<input type="text" name="codigo" id="codigo" class="row form-control mt-1 mx-auto mb-3" placeholder="Codigo: BA123456789TR" value="<?=$dados["codigo"];?>"maxlength="12">
 					
 					<!-- Quantidade -->
-					<input type="text" name="_quantidade" class="row form-control mt-5 mx-auto" value="<?=$dados["quantidade"]; ?>">
+					<label for="_quantidade" class="text-light mb-0">Quantidade: </label>
+					<input type="text" name="_quantidade" id="_quantidade" class="row form-control mt-1 mb-3 mx-auto" value="<?=$dados["quantidade"]; ?>">
 
 					<!-- Disabled -->
 					<input value="Tipo de Equipamento" class="btn btn-secondary mt-1" disabled>
@@ -94,7 +98,7 @@
 					</select>
 					
 					<!-- Id -->
-					<input type="hidden" name="id" value="<?=$dados["id"]; ?>">
+					<input type="hidden" name="id" value="<?= $id ?>">
 
 					<button name="btn-att" class="row mt-4 form-control btn-light mx-auto">Atualizar</button>
 
