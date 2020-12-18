@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Dez-2020 às 14:51
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.4.13
+-- Tempo de geração: 18-Dez-2020 às 15:49
+-- Versão do servidor: 10.4.16-MariaDB
+-- versão do PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `estoque` (
   `id` int(11) NOT NULL,
   `nome_produto` varchar(100) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `valor` float(5,2) NOT NULL,
+  `valor` float(8,2) NOT NULL,
   `codigo` varchar(15) DEFAULT NULL,
   `id_produto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
