@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Dez-2020 às 18:59
+-- Tempo de geração: 18-Dez-2020 às 14:51
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.4.13
 
@@ -32,17 +32,6 @@ CREATE TABLE `equipamentos` (
   `nome_equipamento` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `equipamentos`
---
-
-INSERT INTO `equipamentos` (`id_equipamento`, `nome_equipamento`) VALUES
-(1, 'Computador'),
-(2, 'Monitor'),
-(3, 'Teclado'),
-(4, 'Mouse'),
-(5, 'Ferramenta');
-
 -- --------------------------------------------------------
 
 --
@@ -57,19 +46,6 @@ CREATE TABLE `estoque` (
   `codigo` varchar(15) DEFAULT NULL,
   `id_produto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `estoque`
---
-
-INSERT INTO `estoque` (`id`, `nome_produto`, `quantidade`, `valor`, `codigo`, `id_produto`) VALUES
-(16, 'Computador Dell', 30, 5.50, 'BA12321451241TR', 1),
-(17, 'Monitor AOC', 12, 5.50, 'BA12321451241TR', 2),
-(18, 'Chave de fenda', 3, 5.05, 'BA12321451241TR', 1),
-(19, 'Computador Daten', 2, 70.05, 'BA12321451241TR', 1),
-(20, 'Computador Daten', 3, 1050.00, 'BA12321451241TR', 1),
-(21, 'maquina de escrever', 3, 1050.05, 'BA12321451241TR', 1),
-(22, 'maquina de escrever', 3, 800.50, 'BA12321451241TR', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -95,13 +71,13 @@ ALTER TABLE `estoque`
 -- AUTO_INCREMENT de tabela `equipamentos`
 --
 ALTER TABLE `equipamentos`
-  MODIFY `id_equipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_equipamento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
